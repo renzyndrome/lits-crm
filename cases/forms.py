@@ -44,7 +44,7 @@ class CaseForm(forms.ModelForm):
             "case_type",
             "account",
             "contacts",
-            "closed_on",
+            "date",
             "description",
         )
 

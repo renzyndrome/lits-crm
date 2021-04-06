@@ -27,7 +27,7 @@ class Case(models.Model):
     )
     contacts = models.ManyToManyField(Contact)
     # closed_on = models.DateTimeField()
-    closed_on = models.DateField()
+    date = models.DateField()
     description = models.TextField(blank=True, null=True)
     assigned_to = models.ManyToManyField(User, related_name="case_assigned_users")
     created_by = models.ForeignKey(

@@ -61,7 +61,7 @@ class AccountCreateTest(object):
             priority="Low",
             description="case description",
             created_by=self.user,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
         self.comment = Comment.objects.create(
             comment="test comment", case=self.case, commented_by=self.user

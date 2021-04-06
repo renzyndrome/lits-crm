@@ -222,10 +222,10 @@
                         {% endif %}
                       </div>
                       <div class="filter_col col-md-12">
-                        {% if case_record.closed_on %}
+                        {% if case_record.date %}
                         <div class="form-group">
-                          <label class="case_field_label" for="id_closedon" data-name="name">Close Date</label>
-                          <div class="case_field" id="case_closedon" data-name="name">{{ case_record.closed_on|date }}
+                          <label class="case_field_label" for="id_closedon" data-name="name">Date</label>
+                          <div class="case_field" id="case_closedon" data-name="name">{{ case_record.date|date }}
                           </div>
                         </div>
                         {% endif %}

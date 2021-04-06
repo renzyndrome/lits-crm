@@ -55,15 +55,14 @@
             <div class="col-md-4">
               <div class="filter_col col-md-12">
                 <div class="form-group">
-                  <label for="exampleInputEmail1" class="required">Close
-                    Date{% if case_form.closed_on.field.required %}<span class="error">*</span>{% endif %}</label>
+                  <label for="exampleInputEmail1" class="required">Due Date{% if case_form.date.field.required %}<span class="error">*</span>{% endif %}</label>
                   <div class='input-group date' id='datepicker1'>
-                    {{ case_form.closed_on }}
+                    {{ case_form.date }}
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                   </div>
-                  <span class="error error_message" id="error_id_closed_on">{{ case_form.closed_on.errors }}</span>
+                  <span class="error error_message" id="error_id_date">{{ case_form.date.errors }}</span>
                 </div>
               </div>
               {% if request.user.is_superuser or request.user.role == 'ADMIN' %}
@@ -264,7 +263,7 @@
   $(function () {
     var date = new Date();
     var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-    $('#id_closed_on').datetimepicker({
+    $('#id_date').datetimepicker({
       'format': 'YYYY-MM-DD',
       minDate: today
     })

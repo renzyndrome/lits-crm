@@ -39,7 +39,7 @@ cases_create_post_params = [
     ),
     openapi.Parameter("type_of_case", openapi.IN_QUERY, type=openapi.TYPE_STRING),
     openapi.Parameter(
-        "closed_on",
+        "date",
         openapi.IN_QUERY,
         type=openapi.TYPE_STRING,
         format="date",

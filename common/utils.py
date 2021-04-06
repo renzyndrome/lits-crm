@@ -113,7 +113,7 @@ PRIORITY_CHOICE = (
     ("Urgent", "Urgent"),
 )
 
-CASE_TYPE = (("Question", "Question"), ("Incident", "Incident"), ("Problem", "Problem"))
+CASE_TYPE = (("Question", "Question"), ("Incident", "Incident"), ("Concern", "Concern"))
 
 STAGES = (
     ("QUALIFICATION", "QUALIFICATION"),

@@ -133,7 +133,7 @@ class CaseListView(APIView, LimitOffsetPagination):
             cases_obj = serializer.save(
                 created_by=request.user,
                 company=request.company,
-                closed_on=params.get("closed_on"),
+                date=params.get("date"),
                 case_type=params.get("type_of_case"),
             )
 
@@ -244,7 +244,7 @@ class CaseDetailView(APIView):
 
         if serializer.is_valid():
             cases_object = serializer.save(
-                closed_on=params.get("closed_on"), case_type=params.get("type_of_case")
+                date=params.get("date"), case_type=params.get("type_of_case")
             )
             previous_assigned_to_users = list(
                 cases_object.assigned_to.all().values_list("id", flat=True)

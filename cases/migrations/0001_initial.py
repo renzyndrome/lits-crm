@@ -66,7 +66,7 @@ class Migration(migrations.Migration):
                         null=True,
                     ),
                 ),
-                ("closed_on", models.DateField()),
+                ("date", models.DateField()),
                 ("description", models.TextField(blank=True, null=True)),
                 (
                     "created_on",

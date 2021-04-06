@@ -71,7 +71,7 @@ class CaseCreation(object):
             priority="Low",
             description="something",
             created_by=self.user,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
         self.comment = Comment.objects.create(
             comment="sample comment", case=self.case, commented_by=self.user
@@ -113,7 +113,7 @@ class CaseCreationUrlTestCase(CaseCreation, TestCase):
             "/cases/create/",
             {
                 "name": "new case",
-                "closed_on": "2019-03-14",
+                "date": "2019-03-14",
                 "status": "New",
                 "priority": "Low",
                 "created_by": self.user,
@@ -185,7 +185,7 @@ class CaseUpdateTestCase(CaseCreation, TestCase):
             "/cases/" + str(self.case.id) + "/edit_case/",
             {
                 "name": "new case",
-                "closed_on": "2019-03-14",
+                "date": "2019-03-14",
                 "status": "New",
                 "priority": "Low",
                 "created_by": self.user,
@@ -365,7 +365,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             priority="Low",
             description="something",
             created_by=self.usermp,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
         self.client.login(email="janeDoe@user.com", password="password")
         response = self.client.get(reverse("cases:list"))
@@ -397,7 +397,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             "/cases/create/",
             {
                 "name": "new case",
-                "closed_on": "2019-03-14",
+                "date": "2019-03-14",
                 "status": "New",
                 "priority": "Low",
                 "created_by": self.user,
@@ -445,7 +445,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
     #                         name="mp_case_1", case_type="Problem", status="New",
     #                         account=self.account_mp,
     #                         priority="Low", description="something",
-    #                         created_by=self.usermp, closed_on="2016-05-04", assigned_to=str(self.user.id))
+    #                         created_by=self.usermp, date="2016-05-04", assigned_to=str(self.user.id))
     #     response = self.client.get(reverse('cases:view_case', args=(self.case_2.id,)))
     #     self.assertEqual(200, response.status_code)
 
@@ -457,7 +457,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
                 "name": "some case",
                 "status": "New",
                 "priority": "Low",
-                "closed_on": "2019-03-14",
+                "date": "2019-03-14",
             },
         )
         self.assertEqual(response.status_code, 200)
@@ -481,7 +481,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             priority="Low",
             description="something",
             created_by=self.user,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
 
         self.usermp = User.objects.create(
@@ -500,7 +500,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
                 "name": "some case",
                 "status": "New",
                 "priority": "Low",
-                "closed_on": "2019-03-14",
+                "date": "2019-03-14",
             },
         )
         self.assertEqual(response.status_code, 403)
@@ -530,7 +530,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
                 "name": "team case",
                 "status": "New",
                 "priority": "Low",
-                "closed_on": "2019-03-14",
+                "date": "2019-03-14",
                 "teams": self.team_case.id,
                 "from_account": self.account.id,
             },
@@ -549,7 +549,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             priority="Low",
             description="something",
             created_by=self.user,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
 
         response = self.client.get(
@@ -580,7 +580,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             description="something",
             account=self.account_user,
             created_by=self.usermp,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
 
         self.usermp.has_sales_access = True
@@ -599,7 +599,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             priority="Low",
             description="something",
             created_by=self.user,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
 
         self.case_user_1.assigned_to.add(self.user1, self.user)
@@ -624,7 +624,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             "priority": "Low",
             "description": "something",
             "created_by": self.usermp,
-            "closed_on": "2016-05-04",
+            "date": "2016-05-04",
             "teams": self.team_case.id,
             "from_account": self.account.id,
         }
@@ -668,7 +668,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             description="something",
             account=self.account_user,
             created_by=self.usermp,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
         self.client.logout()
         self.client.login(email="johnDoeCase@example.com", password="password")
@@ -688,7 +688,7 @@ class TestCasesListViewForUser(CaseCreation, TestCase):
             description="something",
             account=self.account_user,
             created_by=self.usermp,
-            closed_on="2016-05-04",
+            date="2016-05-04",
         )
 
         self.client.logout()

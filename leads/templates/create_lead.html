@@ -66,11 +66,11 @@
               </div>
               <div class="filter_col col-md-12">
                 <div class="form-group ">
-                  <label for="exampleInputEmail1">Phone{% if lead_form.phone.field.required %}<span
+                  <label for="exampleInputEmail1">Contact Number{% if lead_form.phone.field.required %}<span
                       class="error">*</span>{% endif %}</label>
                   <input type="tel" name="phone"
                     value="{% if lead_obj and lead_obj.phone_raw_input %}{{lead_obj.phone}}{% endif %}"
-                    class="form-control" placeholder="+911234567890" id="id_phone">
+                    class="form-control" id="id_phone">
                   <span class="error error_message" id="error_id_phone">{{ lead_form.phone.errors }}</span>
                 </div>
               </div>

@@ -22,7 +22,7 @@ class CaseSerializer(serializers.ModelSerializer):
             "status",
             "priority",
             "case_type",
-            "closed_on",
+            "date",
             "description",
             "created_by",
             "created_on",
@@ -37,7 +37,7 @@ class CaseSerializer(serializers.ModelSerializer):
 
 
 class CaseCreateSerializer(serializers.ModelSerializer):
-    closed_on = serializers.DateField
+    date = serializers.DateField
 
     def __init__(self, *args, **kwargs):
         case_view = kwargs.pop("case", False)

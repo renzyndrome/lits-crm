@@ -18,6 +18,7 @@ class LeadForm(forms.ModelForm):
     LEAD_SOURCE_CHOICES = (
         ("call", "Call"),
         ("email", "Email"),
+        ("website", "Website"),
         ("existing customer", "Existing Customer"),
         ("partner", "Partner"),
         ("public relations", "Public Relations"),
@@ -52,7 +53,7 @@ class LeadForm(forms.ModelForm):
         self.fields["first_name"].widget.attrs.update({"placeholder": "First Name"})
         self.fields["last_name"].widget.attrs.update({"placeholder": "Last Name"})
         self.fields["account_name"].widget.attrs.update({"placeholder": "Account Name"})
-        self.fields["phone"].widget.attrs.update({"placeholder": "+911234567890"})
+        self.fields["phone"].widget.attrs.update()
         self.fields["description"].widget.attrs.update({"rows": "6"})
         self.fields["address_line"].widget.attrs.update({"placeholder": "Address Line"})
         self.fields["street"].widget.attrs.update({"placeholder": "Street"})
