@@ -19,7 +19,7 @@ SECRET_KEY = os.getenv(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = [".bottlecrm.com", ".localhost"]
+ALLOWED_HOSTS = [".bottlecrm.com","172.105.118.66", ".localhost"]
 
 # Application definition
 
