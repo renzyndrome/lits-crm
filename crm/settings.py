@@ -177,7 +177,7 @@ AUTH_USER_MODEL = "common.User"
 ENV_TYPE = os.getenv("ENV_TYPE", "dev")
 
 if ENV_TYPE == "dev":
-    DOMAIN_NAME = "localhost:8000"
+    DOMAIN_NAME = "localhost:8001"
     # SESSION_COOKIE_DOMAIN = "localhost:8000"
 
     # DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
@@ -421,9 +421,9 @@ APPLICATION_NAME = "LITS CRM"
 
 
 CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
-        "LOCATION": os.getenv("MEMCACHELOCATION"),
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
     }
 }
 
