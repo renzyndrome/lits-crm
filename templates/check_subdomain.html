@@ -9,7 +9,7 @@
           <div class="welcome">{{ APPLICATION_NAME }}</div>
           <form method="POST" action="{% url 'common:check_domain' %}">
             <div class="form-group">
-              <input type="text" class="form-control" id="id_sub_domain" placeholder="subdomain.bottle.crm"
+              <input type="text" class="form-control" id="id_sub_domain" placeholder="company"
                 name="sub_domain" value="{{request.POST.sub_domain}}">
               <span class="error">
                 <ul class="errorlist">
