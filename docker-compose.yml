@@ -8,11 +8,6 @@ services:
     #   - /home/db:/var/lib/postgresql/data
     env_file: 
       - ./db.env
-    environment:
-      # POSTGRES_DB: "db"
-      POSTGRES_HOST_AUTH_METHOD: "trust"
-
-
   web:
     build: .
     image: micropyramid/django-crm:1
