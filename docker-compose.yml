@@ -4,10 +4,14 @@ services:
   db:
     image: postgres
     restart: always
-    # volumes:
-    #   - /home/db:/var/lib/postgresql/data
+    volumes:
+      - /home/db:/var/lib/postgresql/data
     env_file: 
       - ./db.env
+    networks:
+      - overlay
+    ports:
+      - 5431:5432
   web:
     build: .
     image: micropyramid/django-crm:1
