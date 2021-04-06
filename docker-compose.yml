@@ -3,6 +3,7 @@ version: '2.0'
 services:
   db:
     image: postgres
+    restart: always
     # volumes:
     #   - /home/db:/var/lib/postgresql/data
     environment:
